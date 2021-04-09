@@ -1,3 +1,7 @@
+<style>
+  .btn-link {padding :0  !important}
+</style>
+
 <div class="container " id="home" role="tabpanel" aria-labelledby="home-tab">
     <div class="row my-2 " >
       <div class="col m-auto text-center" *ngIf="page;else elseempty" >
@@ -23,13 +27,13 @@
               <td >{{student.id}}</td>
               <td >{{student.first_name }}</td>
               <td >{{student.last_name}} </td>
-              <td ><a (click)="detailsStudent(student.id , student)" class="text-success ">Details</a></td>
+              <td ><a (click)="detailsStudent(student.id , student)" class="detailsBtn text-success cursor-pointer btn btn-link">Details</a></td>
             </tr>
         </tbody>
       </table>
      
     </div>
-      <div class="col-4 text-left">
+      <div class="col-4 text-left pb-1">
         <h6 class="text-success my-4 m-auto">Page {{numPage}} | #students {{numberSelected}} </h6>
       </div>
       <div class=" col-4 text-center input-group pb-3  pl-5">
@@ -42,7 +46,7 @@
       </div>
       
       <div class="col-4 text-right">
-        <input type="button" class="btn border-success text-success" value="View Details" (click) = "studentsDetails(numPage)">
+        <input type="button" class="btn border-success text-success  " value="View Details" (click) = "studentsDetails(numPage)">
       </div>
   </div> 
   <ng-template #elseBlock><h3 class=" text-center text-success pt-5 my-4 m-auto">this Page not contan Students </h3></ng-template>

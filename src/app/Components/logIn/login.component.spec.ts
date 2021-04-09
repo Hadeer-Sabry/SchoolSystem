@@ -1,7 +1,5 @@
-import { DebugElement } from "@angular/core"
-import { ComponentFixture, TestBed } from "@angular/core/testing"
+import {  TestBed } from "@angular/core/testing"
 import { RouterTestingModule } from "@angular/router/testing"
-import { Admin } from "src/app/Models/models"
 import { AuthService } from "src/app/Services/auth.service"
 import { loginComponent } from "./login.component"
 

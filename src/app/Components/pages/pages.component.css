@@ -1,0 +1,13 @@
+.container .row .col-2 label.radioBtn
+{
+    background-color: #00C851;
+    color: #00C851;
+    border-color: #00C851;
+}
+
+.container .row .col-2 label #page1
+{
+    background-color: #00C851;
+    color: #00C851;
+    border: #00C851;
+}

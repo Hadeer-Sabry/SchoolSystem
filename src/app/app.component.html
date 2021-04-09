@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs  bg-light " >
+    <li class="nav-item ">
+        <a class="nav-link disabled font-weight-bold"  href="#"><h4 class="pt-1">Studnts Demo</h4></a>
+      </li>
+    <li class="nav-item"  *ngIf="loggedIn()">
+      <a class="nav-link active  text-success" href="Pages" ><h5 class="pt-2">Home</h5></a>
+    </li>
+    <li class="nav-item" *ngIf="!loggedIn()">
+      <a class="nav-link text-success"  href="/LogIn" ><h5 class="pt-2">LogIn</h5></a>
+    </li>
+    <li class="nav-item" *ngIf="loggedIn()">
+      <a class="nav-link text-success" (click)="logOut()" ><h5 class="pt-2">LogOut</h5></a>
+    </li>
+  </ul>
+<router-outlet></router-outlet>

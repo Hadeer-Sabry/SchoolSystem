@@ -1,0 +1,22 @@
+<h1 class=" text-center text-success display-3 my-4">Log In</h1>
+<div class="container ">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <form method="POST" (ngSubmit)="submitLogin()" ngNativeValidate>
+        <div class="form-group" >
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="Email" name = "email " [(ngModel)]="submitedAdmin.email"  placeholder="Enter email" required >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="Password" name="passWord" [(ngModel)]="submitedAdmin.passWord" placeholder="Password" required >
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-success  px-5 mt-3 ml-5 ">Submit</button>
+        <label class=" text-danger font-weight-bold ml-5 pt-1">{{Message}}</label>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

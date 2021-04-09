@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row  m-auto  " >
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 m-auto text-center">
+        <h2 class="header text-center text-success pt-3 ">Student {{studentId}}</h2>
+    </div>
+  </div>
+  <div class="row  m-auto  px-5 py-3 ">
+      <div class="col-4 m-auto text-center " >
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top  " src="{{student?.data.avatar}}"  alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{student?.data.first_name +" "+ student?.data.last_name}} </h5>
+                <h5 class="card-title">{{student?.data.email}} </h5>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="row " >
+    <div class="col text-right">
+      <input type="button" class="btn border-success text-success" value="Back" (click) = "backBtn()">
+    </div>
+  </div>
+</div>

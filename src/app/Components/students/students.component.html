@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row " >
+        <h1 class="header text-center text-success display-3 my-4 m-auto">Students Details </h1>
+        </div>
+    <div class="row my-3 mx-5 text-center" *ngIf="page;elseempty">
+        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 my-2 text-center " *ngFor="let student of listStudent">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top " src="{{student.avatar}}"  alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{student.first_name +" "+ student.last_name}} </h5>
+                  <h5 class="card-title">{{student.email}} </h5>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row mb-2" >
+        <div class="col-6 text-left">
+            <h6 class=" text-success my-4 m-auto">Page {{page?.page}} | #students {{per_page}} </h6>
+          </div>
+        <div class="col text-right">
+          <input type="button" class="btn border-success text-success " value="Back" (click) = "backBtn()">
+        </div>
+      </div>
+  </div>

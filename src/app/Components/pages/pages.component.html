@@ -1,0 +1,49 @@
+<div class="container " id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="row my-2 " >
+      <div class="col m-auto text-center" *ngIf="page;else elseempty" >
+        <h1 class=" text-center text-success display-3 my-4 m-auto" >Students </h1>
+        <label class=" text-secondary pt-3 font-weight-bold mr-3 ml-4" >Select Number of Students </label> 
+        <input type="number" [(ngModel)]="numberSelected"  (change)="selectedNumber($event)"  name="numberSelected"  min="1" max="{{numStudent}}">
+      </div>
+    </div>
+    <ng-template #elseempty></ng-template>
+    <div class="row my-4 "  *ngIf="page;else elseBlock" >
+      <div class=" d-inline col-12 m-auto">
+      <table class="table w-75 text-center m-auto">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of filteredList" >
+              <td >{{student.id}}</td>
+              <td >{{student.first_name }}</td>
+              <td >{{student.last_name}} </td>
+              <td ><a (click)="detailsStudent(student.id , student)" class="text-success ">Details</a></td>
+            </tr>
+        </tbody>
+      </table>
+     
+    </div>
+      <div class="col-4 text-left">
+        <h6 class="text-success my-4 m-auto">Page {{numPage}} | #students {{numberSelected}} </h6>
+      </div>
+      <div class=" col-4 text-center input-group pb-3  pl-5">
+        <label class=" text-success  radio-inline pl-5">page 1 
+          <input type="radio" class="radioBtn"  value="page1" name="pageNumber" id="page1" (click)="radioChecked(1)" [(ngModel)]="pageNumber">
+        </label>
+        <label class=" text-success  radio-inline ml-3">page 2 
+          <input type="radio" class="radioBtn"  value="page2" name="pageNumber" id="page2" (click)="radioChecked(2)" [(ngModel)]="pageNumber">
+        </label>
+      </div>
+      
+      <div class="col-4 text-right">
+        <input type="button" class="btn border-success text-success" value="View Details" (click) = "studentsDetails(numPage)">
+      </div>
+  </div> 
+  <ng-template #elseBlock><h3 class=" text-center text-success pt-5 my-4 m-auto">this Page not contan Students </h3></ng-template>
+</div>
